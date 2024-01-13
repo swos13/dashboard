@@ -1,15 +1,31 @@
+:root{
+    --blue-color: #328cdc;
+    --grey-color: #d2dcdc;
+}
+
+body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
 .container {
+    height: 100%;
     display: grid;
+    grid-template: 1fr 5fr / 1fr 5fr;
 }
 
 .header {
-    border: 1px solid rgb(180, 180, 180);
+    background-color: white;
+    grid-area: 1 / 2 / 2 / -1;
 }
 
 .sidebar {
-    border: 1px solid blue;
+    background-color: var(--blue-color);
+    grid-area: 1 / 1 / -1 / 2;
 }
 
 .main {
-    border: 1px solid grey;
+    background-color: var(--grey-color);
+    grid-area: 2 / 2 / -1 / -1;
 }
