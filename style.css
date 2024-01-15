@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Roboto;
+    src: url("./fonts/Roboto-Regular.woff");
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url("./fonts/Roboto-Medium.ttf");
+}
+
 :root{
     --blue-color: #328cdc;
     --grey-color: #d2dcdc;
@@ -15,10 +25,128 @@ body {
     grid-template: 1fr 5fr / 1fr 5fr;
 }
 
+.container > * { 
+    padding-right: 24px;
+}
+
 .header {
     background-color: white;
     grid-area: 1 / 2 / 2 / -1;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
+
+.top {
+    min-width: 800px;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+
+    justify-items: center;
+    align-items: center;
+}
+
+.search {
+    width:100%;
+    
+    display: grid;
+    grid-template-columns: 28px 70%;
+    gap: 4px;
+    justify-content: start;
+    align-items: center;
+}
+
+.search > input {
+    padding: 8px;
+    border: none;
+    border-radius: 16px;
+    background-color: var(--grey-color);
+}
+
+.top, .bottom {
+    padding-left: 5%;
+}
+
+.user {
+    font-family: Roboto-Medium, Helvetica, sans-serif
+}
+
+.top > .user {
+    font-size: 1.2rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.top .user-icon {
+    width: max(30%, 48px);
+    border-radius: 50%;
+}
+
+.bell-container {
+    padding: 16px;
+    border-radius: 50%;
+    background-color: var(--grey-color);
+}
+
+.bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 24px;
+}
+
+.bottom > .user {
+    display: grid;
+    grid-template-columns: 15% 85%;
+
+    align-items: center;
+}
+
+.bottom p {
+    margin: 0;
+}
+
+.greeting {
+    font-size: 1.0rem;
+}
+
+.name {
+    font-size: 2rem;
+}
+
+.bottom .user-icon {
+    width: max(20%, 64px);
+    border-radius: 50%;
+    justify-self: start;
+    margin-right: 8px;
+}
+
+.bottom > ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    justify-items: center;
+}
+
+.file-buttons > li {
+    margin: 0;
+    padding: 0;
+}
+
+.file-buttons > li > button {
+    background-color: var(--blue-color);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 16px;
+}
+
 
 .sidebar {
     background-color: var(--blue-color);
