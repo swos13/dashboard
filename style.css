@@ -8,9 +8,16 @@
     src: url("./fonts/Roboto-Medium.ttf");
 }
 
+@font-face {
+    font-family: Roboto-Bold;
+    src: url("./fonts/Roboto-Bold.ttf");
+}
+
 :root{
     --blue-color: #328cdc;
+    --darker-blue-color: #2165a0;
     --grey-color: #d2dcdc;
+    --darker-grey-color: #adb8b8;
 }
 
 body {
@@ -40,7 +47,7 @@ body {
 .top {
     min-width: 800px;
     display: grid;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: auto clamp(300px, 30%, 360px);
 
     justify-items: center;
     align-items: center;
@@ -57,38 +64,57 @@ body {
 }
 
 .search > input {
-    padding: 8px;
+    font-size: 1rem;
+    padding: 0.6rem 12px;
     border: none;
-    border-radius: 16px;
+    border-radius: 18px;
     background-color: var(--grey-color);
 }
 
+.search > input:focus {
+    outline: none;
+}
+
 .top, .bottom {
-    padding-left: 5%;
+    margin-left: 5%;
 }
 
 .user {
-    font-family: Roboto-Medium, Helvetica, sans-serif
+    font-family: Roboto-Bold, Helvetica, sans-serif
 }
 
 .top > .user {
     font-size: 1.2rem;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-areas: ". bell icon name";
     justify-items: center;
     align-items: center;
-}
-
-.top .user-icon {
-    width: max(30%, 48px);
-    border-radius: 50%;
+    gap: 1rem;
 }
 
 .bell-container {
     padding: 16px;
     border-radius: 50%;
     background-color: var(--grey-color);
+    grid-area: bell;
+}
+
+.bell-container:active {
+    background-color: var(--darker-grey-color);
+}
+
+.user-name {
+    justify-self: center;
+    grid-area: name;
+}
+
+.top .user-icon {
+    width: max(15%, 48px);
+    border-radius: 50%;
+    grid-area: icon;
 }
 
 .bottom {
@@ -101,7 +127,7 @@ body {
 
 .bottom > .user {
     display: grid;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: min(20%, 80px) auto;
 
     align-items: center;
 }
@@ -115,7 +141,7 @@ body {
 }
 
 .name {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .bottom .user-icon {
@@ -130,23 +156,30 @@ body {
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
-    justify-items: center;
+    justify-content: center;
+    justify-items: end;
+    gap: 4px;
 }
 
 .file-buttons > li {
     margin: 0;
     padding: 0;
+
 }
 
 .file-buttons > li > button {
+    font: 1.0rem Roboto-Medium, Helvetica, sans-serif;
+    min-width: 120px;
     background-color: var(--blue-color);
     color: white;
     border: none;
-    border-radius: 16px;
-    padding: 8px 16px;
+    border-radius: 24px;
+    padding: 8px 2rem;
 }
 
+.file-buttons > li > button:active {
+    background-color: var(--darker-blue-color);
+}
 
 .sidebar {
     background-color: var(--blue-color);
