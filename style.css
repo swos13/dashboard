@@ -151,8 +151,11 @@ body {
     margin-right: 8px;
 }
 
-.bottom > ul {
+ul {
     list-style-type: none;
+}
+
+.bottom > ul {
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -184,6 +187,25 @@ body {
 .sidebar {
     background-color: var(--blue-color);
     grid-area: 1 / 1 / -1 / 2;
+}
+
+.sidebar {
+    color: white;
+    font: 1.2rem Roboto-Medium, Helvetica, sans-serif;
+    padding-left: 16px;
+    display: grid;
+    grid-template: 96px repeat(10, 48px) / 64px 1fr;
+    align-items: center;
+}
+
+.sidebar > .fa {
+    font-size: 1.5rem;
+    justify-self: center;
+}
+
+.sidebar > .fa.fa-desktop {
+    font-size: 2rem;
+    justify-self: center;
 }
 
 .main {
