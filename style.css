@@ -235,9 +235,14 @@ ul {
 }
 
 .content {
+    height: 100%;
     display: grid;
-    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    grid-template: repeat(auto-fit, minmax(180px, 1fr)) / repeat(auto-fit, minmax(350px, 1fr));
     gap: 24px;
+
+    overflow: auto;
+    padding-right: 24px;
+    padding-bottom: 24px;
 }
 
 .card {
@@ -260,7 +265,7 @@ ul {
 }
 
 .project > .description {
-    overflow: auto;
+    overflow-y: auto;
     display: block;
     font: 1.0rem Roboto, Helvetica, sans-serif;
     color: var(--text-grey-color);
