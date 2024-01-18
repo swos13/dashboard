@@ -224,14 +224,14 @@ ul {
 } 
 
 .main h3 {
-    font: 1.2rem Roboto-Bold, Helvetica, sans-serif;
+    font: 1.4rem Roboto-Bold, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
 }
 
 .projects-container, .main-side > .side-container {
     display: grid;
-    grid-template-rows: 18px auto;
+    grid-template-rows: 28px auto;
     gap: 12px;
 }
 
@@ -244,12 +244,35 @@ ul {
 .card {
     background-color: white;
     border-radius: 12px;
-    padding: 16px;
+    padding: 24px;
     box-shadow: 4px 4px 6px 0px var(--shadow-color);
 }
 
 .project {
     border-left: 12px solid rgb(255, 183, 50);
+    display: grid;
+    grid-template-rows: 32px 1fr 24px;
+}
+
+.project > .title {
+    display: block;
+    font: 1.2rem Roboto-Bold, Helvetica, sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.project > .description {
+    overflow: auto;
+    display: block;
+    font: 1.0rem Roboto, Helvetica, sans-serif;
+    color: #9c9c9c;
+}
+
+.project > .icons {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    align-items: center;
+    gap: 16px;
 }
 
 .main-side {
