@@ -13,7 +13,7 @@
     src: url("./fonts/Roboto-Bold.ttf");
 }
 
-:root{
+:root {
     --blue-color: #328cdc;
     --darker-blue-color: #2165a0;
     --grey-color: #d2dcdc;
@@ -200,6 +200,11 @@ ul {
     align-items: center;
 }
 
+.sidebar i, .sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
 .sidebar > .fa {
     font-size: 1.5rem;
     justify-self: center;
@@ -259,6 +264,11 @@ ul {
     grid-template-rows: 32px 1fr 24px;
 }
 
+.project:hover {
+    position: relative;
+    transform: scale(1.01, 1.01);
+}
+
 .project > .title {
     display: block;
     font: 1.2rem Roboto-Bold, Helvetica, sans-serif;
@@ -302,9 +312,15 @@ ul {
 }
 
 .announcement > .title {
+    color: black;
+    text-decoration: none;
     display: block;
     font: 1rem Roboto-Bold, Helvetica, sans-serif;
     margin-bottom: 0.3rem;
+}
+
+.announcement > .title:hover {
+    text-decoration: underline;
 }
 
 .announcement:not(.announcement:last-of-type) {
